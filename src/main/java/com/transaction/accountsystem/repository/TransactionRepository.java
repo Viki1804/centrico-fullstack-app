@@ -1,0 +1,14 @@
+package com.transaction.accountsystem.repository;
+
+import com.transaction.accountsystem.entity.Transaction;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+
+@Repository
+public interface TransactionRepository extends JpaRepository<Transaction, Long> {
+
+    List<Transaction> findByAccountAccountId(Long accountId);
+
+}
